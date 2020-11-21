@@ -1,7 +1,0 @@
-{
-    "compilerOption": {
-      "target": "esNext",
-      "module": "commonjs",
-      "sourceMap": true
-    }
-  }
