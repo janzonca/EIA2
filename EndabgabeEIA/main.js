@@ -11,6 +11,8 @@ var Doenerbude;
         var o = new Doenerbude.Onion(new Doenerbude.Position(100, 100));
         // und zeichnen das Lager
         o.draw(ctx);
+        var p = new Doenerbude.Pepper(new Doenerbude.Position(130, 130));
+        p.draw(ctx);
     }
 })(Doenerbude || (Doenerbude = {}));
 //# sourceMappingURL=main.js.map

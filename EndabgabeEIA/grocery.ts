@@ -28,7 +28,9 @@ namespace Doenerbude { // namespace
         }
 
         draw(ctx: CanvasRenderingContext2D): void {
-            throw new Error("Method not implemented.");
+            ctx.beginPath();
+            ctx.rect(this.position.x, this.position.y, 10, 10);
+            ctx.stroke();
         }
 
     }
