@@ -15,8 +15,15 @@ namespace Doenerbude {
         var o = new Onion(new Position(100, 100));
         // und zeichnen das Lager
         o.draw(ctx!);
-
+//
         var p = new Pepper(new Position(130, 130));
         p.draw(ctx!);
+
+        var t = new Tomato(new Position(160, 160));
+        t.draw(ctx!);
+
+        var k = new Kebab(new Position (190, 190));
+        k.draw(ctx!);
+        
     }
 }

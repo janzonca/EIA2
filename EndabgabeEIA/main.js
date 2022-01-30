@@ -11,8 +11,13 @@ var Doenerbude;
         var o = new Doenerbude.Onion(new Doenerbude.Position(100, 100));
         // und zeichnen das Lager
         o.draw(ctx);
+        //
         var p = new Doenerbude.Pepper(new Doenerbude.Position(130, 130));
         p.draw(ctx);
+        var t = new Doenerbude.Tomato(new Doenerbude.Position(160, 160));
+        t.draw(ctx);
+        var k = new Doenerbude.Kebab(new Doenerbude.Position(190, 190));
+        k.draw(ctx);
     }
 })(Doenerbude || (Doenerbude = {}));
 //# sourceMappingURL=main.js.map
