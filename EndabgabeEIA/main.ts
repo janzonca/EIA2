@@ -24,6 +24,14 @@ namespace Doenerbude {
 
         var k = new Kebab(new Position (190, 190));
         k.draw(ctx!);
+
+        var y = new Yufka(new Position (220, 220));
+        y.draw(ctx!);
+
+        var l = new Lahmacun (new Position (250, 250));
+        l.draw(ctx!);
+
         
+
     }
 }

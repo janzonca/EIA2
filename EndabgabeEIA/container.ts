@@ -14,7 +14,19 @@ namespace Doenerbude {
             this.grocery = _grocery;
             
         }
-        draw() {
+        draw(ctx: CanvasRenderingContext2D): void {
+            ctx.beginPath();
+            ctx.rect(this.position.x, this.position.y, 10, 10);
+            ctx.stroke();
+        }
+    }
+}
+ 
           
+            //TODO hier den container zeichen und dann die position der grocery in den container setzen
+            this.grocery.position = new Position()
+            this.grocery.draw(ctx);
         
-        } } }
+        } 
+    } 
+}

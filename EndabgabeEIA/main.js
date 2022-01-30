@@ -18,6 +18,10 @@ var Doenerbude;
         t.draw(ctx);
         var k = new Doenerbude.Kebab(new Doenerbude.Position(190, 190));
         k.draw(ctx);
+        var y = new Doenerbude.Yufka(new Doenerbude.Position(220, 220));
+        y.draw(ctx);
+        var l = new Doenerbude.Lahmacun(new Doenerbude.Position(250, 250));
+        l.draw(ctx);
     }
 })(Doenerbude || (Doenerbude = {}));
 //# sourceMappingURL=main.js.map
