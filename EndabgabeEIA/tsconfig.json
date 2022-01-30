@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "target": "ESNEXT",
+      "module": "commonjs", 
+      "sourceMap": true,          
+      "removeComments": false, 
+      "noImplicitAny": false,      
+      "strictNullChecks": false,   
+      "strictFunctionTypes": false,
+      "strictBindCallApply": true,
+      "noImplicitThis": true,     
+      "alwaysStrict": false,       
+    
+      "noUnusedLocals": false, 
+      "noUnusedParameters": false, 
+      "noImplicitReturns": false,  
+      "noFallthroughCasesInSwitch": false,
+  
+      "moduleResolution": "node"  
+      }
+}
+  
