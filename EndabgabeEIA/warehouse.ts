@@ -36,12 +36,10 @@ namespace Doenerbude {
             // let scale = (0.1 * 1) + (this.position.y - 600) / 1000;
             ctx.stroke();
             ctx.closePath();
-          }
-
-        
-        }
+    
 
         // override draw(): void {
         //     super.draw();
         // }
-    }
+    
+    }}}
