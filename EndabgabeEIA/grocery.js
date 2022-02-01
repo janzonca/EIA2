@@ -10,6 +10,7 @@ var Doenerbude;
             ctx.beginPath();
             ctx.rect(this.position.x, this.position.y, 10, 10);
             ctx.stroke();
+            ctx.strokeStyle = "purple";
         }
     }
     Doenerbude.Onion = Onion;
@@ -23,6 +24,9 @@ var Doenerbude;
             ctx.beginPath();
             ctx.rect(this.position.x, this.position.y, 10, 10);
             ctx.stroke();
+            ctx.strokeStyle = "red";
+            ctx.fillStyle = "red";
+            ctx.fillRect(10, 10, 10, 10);
         }
     }
     Doenerbude.Pepper = Pepper;
@@ -36,6 +40,10 @@ var Doenerbude;
             ctx.beginPath();
             ctx.rect(this.position.x, this.position.y, 10, 10);
             ctx.stroke();
+            ctx.strokeStyle = "darkred";
+            ctx.strokeStyle = "darkred";
+            ctx.fillStyle = "darkred";
+            ctx.fillRect(10, 10, 10, 10);
         }
     }
     Doenerbude.Tomato = Tomato;
@@ -49,6 +57,7 @@ var Doenerbude;
             ctx.beginPath();
             ctx.rect(this.position.x, this.position.y, 10, 10);
             ctx.stroke();
+            ctx.strokeStyle = "yellow";
         }
     }
     Doenerbude.Kebab = Kebab;
@@ -61,7 +70,7 @@ var Doenerbude;
         draw(ctx) {
             ctx.beginPath();
             ctx.rect(this.position.x, this.position.y, 10, 10);
-            ctx.stroke();
+            ctx.strokeStyle = "yellow";
         }
     }
     Doenerbude.Yufka = Yufka;
@@ -75,6 +84,7 @@ var Doenerbude;
             ctx.beginPath();
             ctx.rect(this.position.x, this.position.y, 10, 10);
             ctx.stroke();
+            ctx.strokeStyle = "yellow";
         }
     }
     Doenerbude.Lahmacun = Lahmacun;

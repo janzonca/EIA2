@@ -21,6 +21,4 @@ var Doenerbude;
     Doenerbude.Container = Container;
 })(Doenerbude || (Doenerbude = {}));
 //TODO hier den container zeichen und dann die position der grocery in den container setzen
-this.grocery.position = new Position();
-this.grocery.draw(ctx);
 //# sourceMappingURL=container.js.map

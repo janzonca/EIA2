@@ -15,6 +15,7 @@ namespace Doenerbude { // namespace
             ctx.beginPath();
             ctx.rect(this.position.x, this.position.y, 10, 10);
             ctx.stroke();
+            ctx.strokeStyle = "purple";
         }
 
     }
@@ -31,6 +32,10 @@ namespace Doenerbude { // namespace
             ctx.beginPath();
             ctx.rect(this.position.x, this.position.y, 10, 10);
             ctx.stroke();
+            ctx.strokeStyle = "red";
+            ctx.fillStyle= "red";
+           ctx.fillRect(10,10,10,10);
+        
         }
 
     }
@@ -47,6 +52,10 @@ namespace Doenerbude { // namespace
             ctx.beginPath();
             ctx.rect(this.position.x, this.position.y, 10, 10);
             ctx.stroke();
+            ctx.strokeStyle = "darkred";
+            ctx.strokeStyle = "darkred";
+            ctx.fillStyle= "darkred";
+           ctx.fillRect(10,10,10,10);
         
         }
 
@@ -63,6 +72,7 @@ namespace Doenerbude { // namespace
             ctx.beginPath();
             ctx.rect(this.position.x, this.position.y, 10, 10);
             ctx.stroke();
+            ctx.strokeStyle = "yellow";
         
         }
 
@@ -79,7 +89,7 @@ namespace Doenerbude { // namespace
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
             ctx.rect(this.position.x, this.position.y, 10, 10);
-            ctx.stroke();
+            ctx.strokeStyle = "yellow";
         }
         
 
@@ -96,6 +106,7 @@ namespace Doenerbude { // namespace
             ctx.beginPath();
             ctx.rect(this.position.x, this.position.y, 10, 10);
             ctx.stroke();
+            ctx.strokeStyle = "yellow";
         
         }
 
