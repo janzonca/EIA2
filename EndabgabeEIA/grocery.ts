@@ -14,9 +14,10 @@ namespace Doenerbude { // namespace
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
             ctx.strokeStyle = "purple";
+            ctx.fillStyle = "purple";
             ctx.arc(100,60,15,0,Math.PI * 2);
             ctx.stroke();
-           
+            ctx.fill ();
         }
 
     }
@@ -32,8 +33,10 @@ namespace Doenerbude { // namespace
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
             ctx.strokeStyle = "red";
+            ctx.fillStyle = "red"
             ctx.arc(100,100,15,0,Math.PI * 2);
             ctx.stroke();
+            ctx.fill ();
            
            
         
@@ -52,8 +55,10 @@ namespace Doenerbude { // namespace
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
             ctx.strokeStyle = "darkred";
-            ctx.arc(100,210,15,0,Math.PI * 2);
+            ctx.fillStyle ="darkred";
+            ctx.arc(100,220,15,0,Math.PI * 2);
             ctx.stroke();
+            ctx.fill ();
            
         
         }
@@ -70,8 +75,10 @@ namespace Doenerbude { // namespace
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
             ctx.strokeStyle = "orange";
+            ctx.fillStyle = "orange";
             ctx.arc(100,20,15,0,Math.PI * 2);
             ctx.stroke();
+            ctx.fill();
           
         }
 
@@ -88,8 +95,11 @@ namespace Doenerbude { // namespace
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
             ctx.strokeStyle = "pink";
-            ctx.arc(100,170,15,0,Math.PI * 2);
+            ctx.fillStyle = "pink";
+            ctx.arc(100,180,15,0,Math.PI * 2);
             ctx.stroke();
+            ctx.fill();
+            
             
         }
         
@@ -106,8 +116,10 @@ namespace Doenerbude { // namespace
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
             ctx.strokeStyle = "blue";
+            ctx.fillStyle = "blue"
             ctx.arc(100,140,15,0,Math.PI * 2);
             ctx.stroke();
+            ctx.fill ();
             
             
         
