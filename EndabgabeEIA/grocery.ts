@@ -13,9 +13,10 @@ namespace Doenerbude { // namespace
 
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
-            ctx.rect(this.position.x, this.position.y, 10, 10);
-            ctx.stroke();
             ctx.strokeStyle = "purple";
+            ctx.arc(100,60,15,0,Math.PI * 2);
+            ctx.stroke();
+           
         }
 
     }
@@ -30,11 +31,11 @@ namespace Doenerbude { // namespace
 
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
-            ctx.rect(this.position.x, this.position.y, 10, 10);
-            ctx.stroke();
             ctx.strokeStyle = "red";
-            ctx.fillStyle= "red";
-           ctx.fillRect(10,10,10,10);
+            ctx.arc(100,100,15,0,Math.PI * 2);
+            ctx.stroke();
+           
+           
         
         }
 
@@ -50,12 +51,10 @@ namespace Doenerbude { // namespace
 
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
-            ctx.rect(this.position.x, this.position.y, 10, 10);
+            ctx.strokeStyle = "darkred";
+            ctx.arc(100,210,15,0,Math.PI * 2);
             ctx.stroke();
-            ctx.strokeStyle = "darkred";
-            ctx.strokeStyle = "darkred";
-            ctx.fillStyle= "darkred";
-           ctx.fillRect(30,10,10,10);
+           
         
         }
 
@@ -70,11 +69,10 @@ namespace Doenerbude { // namespace
 
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
-            ctx.arc(100,20,15,0,Math.PI * 2);
-            ctx.fillStyle = "orange";
-            ctx.stroke();
             ctx.strokeStyle = "orange";
-           ctx.fillRect(50,10,10,10);
+            ctx.arc(100,20,15,0,Math.PI * 2);
+            ctx.stroke();
+          
         }
 
     }
@@ -89,10 +87,9 @@ namespace Doenerbude { // namespace
 
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
-            ctx.rect(this.position.x, this.position.y, 90, 10);
-            ctx.strokeStyle = "yellow";
-            ctx.fillStyle= "yellow";
-            ctx.fillRect(70,10,10,10);
+            ctx.strokeStyle = "pink";
+            ctx.arc(100,170,15,0,Math.PI * 2);
+            ctx.stroke();
             
         }
         
@@ -108,13 +105,15 @@ namespace Doenerbude { // namespace
 
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
-            ctx.rect(this.position.x, this.position.y, 10, 10);
+            ctx.strokeStyle = "blue";
+            ctx.arc(100,140,15,0,Math.PI * 2);
             ctx.stroke();
-            ctx.strokeStyle = "yellow";
+            
+            
         
         }
 
     }
 
-    //TODO das für die anderen zutaten machen und die draw methode implementieren
+  
 }
