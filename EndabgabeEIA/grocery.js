@@ -1,98 +1,62 @@
 var Doenerbude;
 (function (Doenerbude) {
-    // eine Klasse, welche eine Zwiebel darstellt 
-    class Onion {
+    //Objekt wird erstellt, aber noch nicht verwedet
+    class Grocery {
         position;
-        constructor(_position) {
+        color;
+        constructor(_position, _color) {
             this.position = _position;
+            this.color = _color;
         }
         draw(ctx) {
             ctx.beginPath();
-            ctx.strokeStyle = "purple";
-            ctx.fillStyle = "purple";
-            ctx.arc(100, 60, 15, 0, Math.PI * 2);
+            ctx.strokeStyle = this.color;
+            ctx.fillStyle = this.color;
+            ctx.arc(this.position.x, this.position.y, 15, 0, Math.PI * 2);
             ctx.stroke();
             ctx.fill();
+        }
+    }
+    Doenerbude.Grocery = Grocery;
+    // eine Klasse, welche eine Zwiebel darstellt 
+    class Onion extends Grocery {
+        constructor(_position) {
+            super(_position, "purple");
         }
     }
     Doenerbude.Onion = Onion;
     // eine Klasse, welche einer Paprika darstellt
-    class Pepper {
-        position;
+    class Pepper extends Grocery {
         constructor(_position) {
-            this.position = _position;
-        }
-        draw(ctx) {
-            ctx.beginPath();
-            ctx.strokeStyle = "red";
-            ctx.fillStyle = "red";
-            ctx.arc(100, 100, 15, 0, Math.PI * 2);
-            ctx.stroke();
-            ctx.fill();
+            super(_position, "black");
         }
     }
     Doenerbude.Pepper = Pepper;
     // eine Klasse, welche eine Tomate darstellt
-    class Tomato {
-        position;
+    class Tomato extends Grocery {
         constructor(_position) {
-            this.position = _position;
-        }
-        draw(ctx) {
-            ctx.beginPath();
-            ctx.strokeStyle = "darkred";
-            ctx.fillStyle = "darkred";
-            ctx.arc(100, 220, 15, 0, Math.PI * 2);
-            ctx.stroke();
-            ctx.fill();
+            super(_position, "darkred");
         }
     }
     Doenerbude.Tomato = Tomato;
     // eine Klasse, welche einen Kebab darstellt
-    class Kebab {
-        position;
+    class Kebab extends Grocery {
         constructor(_position) {
-            this.position = _position;
-        }
-        draw(ctx) {
-            ctx.beginPath();
-            ctx.strokeStyle = "orange";
-            ctx.fillStyle = "orange";
-            ctx.arc(100, 20, 15, 0, Math.PI * 2);
-            ctx.stroke();
-            ctx.fill();
+            super(_position, "yellow");
         }
     }
     Doenerbude.Kebab = Kebab;
     //eine Klasse, welche ein Yufka darstellt
-    class Yufka {
-        position;
+    class Yufka extends Grocery {
         constructor(_position) {
-            this.position = _position;
-        }
-        draw(ctx) {
-            ctx.beginPath();
-            ctx.strokeStyle = "pink";
-            ctx.fillStyle = "pink";
-            ctx.arc(100, 180, 15, 0, Math.PI * 2);
-            ctx.stroke();
-            ctx.fill();
+            super(_position, "orange");
         }
     }
     Doenerbude.Yufka = Yufka;
     // eine Klasse, welche einen Lahmacum darstellt
-    class Lahmacun {
-        position;
+    class Lahmacun extends Grocery {
         constructor(_position) {
-            this.position = _position;
-        }
-        draw(ctx) {
-            ctx.beginPath();
-            ctx.strokeStyle = "blue";
-            ctx.fillStyle = "blue";
-            ctx.arc(100, 140, 15, 0, Math.PI * 2);
-            ctx.stroke();
-            ctx.fill();
+            super(_position, "brown");
         }
     }
     Doenerbude.Lahmacun = Lahmacun;

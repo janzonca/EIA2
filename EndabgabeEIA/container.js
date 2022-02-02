@@ -1,6 +1,7 @@
 var Doenerbude;
 (function (Doenerbude) {
     class Container {
+        size = 50;
         position;
         capacity;
         count;
@@ -14,8 +15,18 @@ var Doenerbude;
         }
         draw(ctx) {
             ctx.beginPath();
-            ctx.rect(this.position.x, this.position.y, 10, 10);
+            ctx.strokeStyle = "brown";
+            ctx.rect(this.position.x, this.position.y, this.size, this.size);
             ctx.stroke();
+            this.grocery.position = new Doenerbude.Position(this.position.x + this.size / 2, this.position.y + this.size / 2);
+            this.grocery.draw(ctx);
+        }
+        isClicked(clickX, clickY) {
+            let c1 = clickX >= this.position.x;
+            let c2 = clickX <= this.position.x + this.size;
+            let c3 = clickY >= this.position.y;
+            let c4 = clickY <= this.position.y + this.size;
+            return c1 && c2 && c3 && c4;
         }
     }
     Doenerbude.Container = Container;
