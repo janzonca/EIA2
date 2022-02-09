@@ -66,9 +66,9 @@ namespace Doenerbude {
             }
 
 
-            ctx.lineWidth = 10
-            ctx.stroke()
-            ctx.lineWidth = 1
+            ctx.lineWidth = 10;
+            ctx.stroke();
+            ctx.lineWidth = 1;
         }
 
         isClicked(clickX, clickY):boolean {

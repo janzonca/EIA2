@@ -18,11 +18,11 @@ namespace Doenerbude {
         }
         draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
-            ctx.strokeStyle = "brown";
+            ctx.strokeStyle = "black";
             ctx.rect(this.position.x, this.position.y, this.size, this.size);
             ctx.stroke();
 
-            this.grocery.position = new Position(this.position.x + this.size / 2, this.position.y + this.size / 2);
+            this.grocery.position = new Position(this.position.x - 20 + this.size / 2, this.position.y - 10 + this.size / 2);
             this.grocery.draw(ctx);
         }
 

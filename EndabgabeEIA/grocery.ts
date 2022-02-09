@@ -13,11 +13,17 @@ namespace Doenerbude { // namespace
             ctx.beginPath();
             ctx.strokeStyle = this.color;
             ctx.fillStyle = this.color;
-            ctx.arc(this.position.x, this.position.y, 15, 0, Math.PI * 2);
+            ctx.moveTo(this.position.x, this.position.y);
+            ctx.lineTo(this.position.x + 20, this.position.y + 20);
+            ctx.lineTo(this.position.x + 40, this.position.y);
+            ctx.moveTo(this.position.x, this.position.y);
+            ctx.closePath();
             ctx.stroke();
             ctx.fill ();
         }  
     }
+//    ctx.arc(this.position.x, this.position.y, 15, 0, Math.PI * 2);
+
 
     // eine Klasse, welche eine Zwiebel darstellt 
     export class Onion extends Grocery {
@@ -32,7 +38,7 @@ namespace Doenerbude { // namespace
     export class Pepper extends Grocery {
        
         constructor(_position: Position) {
-            super(_position, "black");
+            super(_position, "yellow");
         }
 
     }
@@ -50,7 +56,7 @@ namespace Doenerbude { // namespace
     export class Kebab extends Grocery {
       
         constructor(_position: Position) {
-            super(_position, "yellow");
+            super(_position, "black");
         }
 
     }

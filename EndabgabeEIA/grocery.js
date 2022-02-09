@@ -12,12 +12,17 @@ var Doenerbude;
             ctx.beginPath();
             ctx.strokeStyle = this.color;
             ctx.fillStyle = this.color;
-            ctx.arc(this.position.x, this.position.y, 15, 0, Math.PI * 2);
+            ctx.moveTo(this.position.x, this.position.y);
+            ctx.lineTo(this.position.x + 20, this.position.y + 20);
+            ctx.lineTo(this.position.x + 40, this.position.y);
+            ctx.moveTo(this.position.x, this.position.y);
+            ctx.closePath();
             ctx.stroke();
             ctx.fill();
         }
     }
     Doenerbude.Grocery = Grocery;
+    //    ctx.arc(this.position.x, this.position.y, 15, 0, Math.PI * 2);
     // eine Klasse, welche eine Zwiebel darstellt 
     class Onion extends Grocery {
         constructor(_position) {
@@ -28,7 +33,7 @@ var Doenerbude;
     // eine Klasse, welche einer Paprika darstellt
     class Pepper extends Grocery {
         constructor(_position) {
-            super(_position, "black");
+            super(_position, "yellow");
         }
     }
     Doenerbude.Pepper = Pepper;
@@ -42,7 +47,7 @@ var Doenerbude;
     // eine Klasse, welche einen Kebab darstellt
     class Kebab extends Grocery {
         constructor(_position) {
-            super(_position, "yellow");
+            super(_position, "black");
         }
     }
     Doenerbude.Kebab = Kebab;
