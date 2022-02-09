@@ -15,6 +15,8 @@ var Doenerbude;
         }
         draw(ctx) {
             ctx.beginPath();
+            ctx.fillStyle = "black";
+            ctx.fillText(this.count + "/" + this.capacity, this.position.x, this.position.y - 5);
             ctx.strokeStyle = "black";
             ctx.rect(this.position.x, this.position.y, this.size, this.size);
             ctx.stroke();

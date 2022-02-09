@@ -12,6 +12,8 @@ namespace Doenerbude {
 
     let containers: Array<Container> = [];
 
+    let customersPerMinute: Number = 0;
+
 
 
     let currentEmployee: Employee = undefined;
@@ -41,6 +43,9 @@ namespace Doenerbude {
             return;
         }
 
+        let employeeSelectValue: String = document.getElementById("employeeSelect").value
+        let customerSelectValue: String = document.getElementById("customerSelect").value;
+        let containerSelectValue: String = document.getElementById("containerSelect").value;
 
         //das folgende ist nur beispiel:
         // push fügt dinge zum array hinzu
@@ -52,12 +57,27 @@ namespace Doenerbude {
         containers.push(new Container(10, 10, new Lahmacun (new Position(0,0)), new Position(340, 380)));
         containers.push(new Container(10, 10, new Kebab (new Position(0,0)), new Position(420, 380)));
         containers.push(new Container(10, 10, new Yufka (new Position(0,0)), new Position(500, 380)));
-        //if (das was ausgewählt ist) {
+       
+       // if (employees.values = "2") {  
         // 2 mitarbeiter erzeuegn
-        // }
-        //else if (das ander) {
+        
+       // else if (employees.values = "1") {
         // dann einen erzeugen
+        
+        employees.push(new Employee(new Position(430, 510)));
+            
         // }
+
+
+        //if (customers.values = "2") {   
+        // 2 mitarbeiter erzeuegn
+        
+       // else if (customers.values = "1") {
+        // dann einen erzeugen
+        
+            
+        // }
+
 
         // dann alle container erzeugen
 

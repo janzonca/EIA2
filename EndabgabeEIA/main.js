@@ -7,6 +7,7 @@ var Doenerbude;
     let customers = [];
     let employees = [];
     let containers = [];
+    let customersPerMinute = 0;
     let currentEmployee = undefined;
     let employee = new Doenerbude.Employee(new Doenerbude.Position(100, 100));
     let pepper = new Doenerbude.Onion(new Doenerbude.Position(100, 100));
@@ -25,6 +26,9 @@ var Doenerbude;
         if (initialized) {
             return;
         }
+        let employeeSelectValue = document.getElementById("employeeSelect").value;
+        let customerSelectValue = document.getElementById("customerSelect").value;
+        let containerSelectValue = document.getElementById("containerSelect").value;
         //das folgende ist nur beispiel:
         // push fügt dinge zum array hinzu
         employees.push(new Doenerbude.Employee(new Doenerbude.Position(430, 510)));
@@ -35,10 +39,15 @@ var Doenerbude;
         containers.push(new Doenerbude.Container(10, 10, new Doenerbude.Lahmacun(new Doenerbude.Position(0, 0)), new Doenerbude.Position(340, 380)));
         containers.push(new Doenerbude.Container(10, 10, new Doenerbude.Kebab(new Doenerbude.Position(0, 0)), new Doenerbude.Position(420, 380)));
         containers.push(new Doenerbude.Container(10, 10, new Doenerbude.Yufka(new Doenerbude.Position(0, 0)), new Doenerbude.Position(500, 380)));
-        //if (das was ausgewählt ist) {
+        // if (employees.values = "2") {  
         // 2 mitarbeiter erzeuegn
+        // else if (employees.values = "1") {
+        // dann einen erzeugen
+        employees.push(new Doenerbude.Employee(new Doenerbude.Position(430, 510)));
         // }
-        //else if (das ander) {
+        //if (customers.values = "2") {   
+        // 2 mitarbeiter erzeuegn
+        // else if (customers.values = "1") {
         // dann einen erzeugen
         // }
         // dann alle container erzeugen
