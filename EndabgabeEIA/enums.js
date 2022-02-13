@@ -20,5 +20,11 @@ var Doenerbude;
         PRODUCT[PRODUCT["KEBAB"] = 1] = "KEBAB";
         PRODUCT[PRODUCT["LAHMACUN"] = 2] = "LAHMACUN";
     })(PRODUCT = Doenerbude.PRODUCT || (Doenerbude.PRODUCT = {}));
+    let CUSTOMER_STATE;
+    (function (CUSTOMER_STATE) {
+        CUSTOMER_STATE[CUSTOMER_STATE["WAIT"] = 0] = "WAIT";
+        CUSTOMER_STATE[CUSTOMER_STATE["ORDERED"] = 1] = "ORDERED";
+        CUSTOMER_STATE[CUSTOMER_STATE["FINISHED"] = 2] = "FINISHED";
+    })(CUSTOMER_STATE = Doenerbude.CUSTOMER_STATE || (Doenerbude.CUSTOMER_STATE = {}));
 })(Doenerbude || (Doenerbude = {}));
 //# sourceMappingURL=enums.js.map

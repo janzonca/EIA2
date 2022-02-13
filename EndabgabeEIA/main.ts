@@ -43,58 +43,43 @@ namespace Doenerbude {
             return;
         }
 
-        let employeeSelectValue: String = document.getElementById("employeeSelect").value
+        let employeeSelectValue: String = document.getElementById("employeeSelect").value;
         let customerSelectValue: String = document.getElementById("customerSelect").value;
-        let containerSelectValue: String = document.getElementById("containerSelect").value;
+        let capacitySelectValue: String = document.getElementById("capacitySelect").value;
+        let warehouseSelectValue: String = document.getElementById("warehouseSelect").value;
+        let breakSelectValue: String = document.getElementById("breakSelect").value;
 
-        //das folgende ist nur beispiel:
-        // push fügt dinge zum array hinzu
-        employees.push(new Employee(new Position(430, 510)));
-        employees.push(new Employee(new Position(40, 510)));
-        containers.push(new Container(10, 10, new Pepper (new Position(0,0)), new Position(100, 380)));
-        containers.push(new Container(10, 10, new Onion (new Position(0,0)), new Position(180, 380)));
-        containers.push(new Container(10, 10, new Tomato (new Position(0,0)), new Position(260, 380)));
-        containers.push(new Container(10, 10, new Lahmacun (new Position(0,0)), new Position(340, 380)));
-        containers.push(new Container(10, 10, new Kebab (new Position(0,0)), new Position(420, 380)));
-        containers.push(new Container(10, 10, new Yufka (new Position(0,0)), new Position(500, 380)));
+        if (employeeSelectValue === "workers" || customerSelectValue == "customer" || capacitySelectValue == "capacity" || breakSelectValue == "break" || warehouseSelectValue == "warehouse" ) {
+            return;
+        }
+        
+
+        let capacity: number = parseInt(capacitySelectValue);
+        containers.push(new Container(capacity, capacity, new Pepper (new Position(0,0)), new Position(100, 380)));
+        containers.push(new Container(capacity, capacity, new Onion (new Position(0,0)), new Position(180, 380)));
+        containers.push(new Container(capacity, capacity, new Tomato (new Position(0,0)), new Position(260, 380)));
+        containers.push(new Container(capacity, capacity, new Lahmacun (new Position(0,0)), new Position(340, 380)));
+        containers.push(new Container(capacity, capacity, new Kebab (new Position(0,0)), new Position(420, 380)));
+        containers.push(new Container(capacity, capacity, new Yufka (new Position(0,0)), new Position(500, 380)));
        
-       // if (employees.values = "2") {  
-        // 2 mitarbeiter erzeuegn
-        
-       // else if (employees.values = "1") {
-        // dann einen erzeugen
-        
-        employees.push(new Employee(new Position(430, 510)));
-            
-        // }
+        if (employeeSelectValue == "2") {
+            employees.push(new Employee(new Position(430, 510)));
+            employees.push(new Employee(new Position(40, 510)));
+        } else if (employeeSelectValue == "1") {
+            employees.push(new Employee(new Position(430, 510)));
+        }
 
 
-        //if (customers.values = "2") {   
-        // 2 mitarbeiter erzeuegn
-        
-       // else if (customers.values = "1") {
-        // dann einen erzeugen
-        
-            
-        // }
-
-
-        // dann alle container erzeugen
-
-
-        // mitarbeiter initialisieren
-
-        //behältnisse 
-        
-
-        
-        
+        let customersPerMinute: number = parseInt(customerSelectValue);
+        let interval: number = 60 / customersPerMinute
 
 
         ctx.canvas.addEventListener("click", handleClick);
 
         //  Spielfeld wird alle 10 ms neu gezeichnet.  
         setInterval(drawGame, REFRESHRATE);
+        //Customer wird alle X Sekunden ein neuer erzeugt
+        setInterval(spawnCustomer, interval * 1000);
         initialized = true;
     }
 
@@ -135,12 +120,25 @@ namespace Doenerbude {
         employees.forEach(e => e.draw(ctx));
         // durch alle container durchgehen und zeichnen
         containers.forEach(e => e.draw(ctx));
+        // durch alle kunden durchgehen und zeichnen
+        customers.forEach(e => e.draw(ctx));
     }
 
     function drawGamefield(ctx: CanvasRenderingContext2D): void {
 
         ctx.fillStyle = "lightblue"; 
         ctx.fillRect(0, 300, 1600, 200);
+    }
+
+    function spawnCustomer(ctx: CanvasRenderingContext2D): void {
+        let customer = new Customer(new Position(300, 0));
+        customers.push(customer)
+        customer.moveTo(new Position(50 + 30 * customers.length, 300))
+
+        // Referenzvergleich geht hier!!
+        if (customers[0] == customer) {
+            customer.state = CUSTOMER_STATE.ORDERED
+        }
     }
 
     

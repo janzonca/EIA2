@@ -34,15 +34,23 @@ namespace Doenerbude {
 
     export class Customer extends Human {
 
+        private order: Order;
+        public state: CUSTOMER_STATE;
+
 
         constructor(_position: Position) {
             super(MOOD.HAPPY, _position);
+
+            this.order = Orders.getRandomOrder();
         }
 
 
 
         draw(ctx: CanvasRenderingContext2D): void {
             super.draw(ctx);
+            if (this.state === CUSTOMER_STATE.ORDERED) {
+                ctx.fillText(this.order.toString(), this.position.x, this.position.y - this.radius - 3)
+            }
         }
     }
 

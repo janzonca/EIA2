@@ -27,11 +27,17 @@ var Doenerbude;
     }
     Doenerbude.Human = Human;
     class Customer extends Human {
+        order;
+        state;
         constructor(_position) {
             super(Doenerbude.MOOD.HAPPY, _position);
+            this.order = Doenerbude.Orders.getRandomOrder();
         }
         draw(ctx) {
             super.draw(ctx);
+            if (this.state === Doenerbude.CUSTOMER_STATE.ORDERED) {
+                ctx.fillText(this.order.toString(), this.position.x, this.position.y - this.radius - 3);
+            }
         }
     }
     Doenerbude.Customer = Customer;

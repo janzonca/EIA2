@@ -17,4 +17,10 @@ namespace Doenerbude {
         KEBAB,
         LAHMACUN
     }
+
+    export enum CUSTOMER_STATE {
+        WAIT,
+        ORDERED,
+        FINISHED
+    }
 }
