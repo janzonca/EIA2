@@ -13,6 +13,7 @@
   <script src="position.js"></script>
   <script src="human.js"></script>
   <script src="container.js"></script>
+  <script src="orderContainter.js"></script>
   <script src="main.js"></script>
   <script src="recipes.js"></script>
  
@@ -24,37 +25,35 @@
       <h1> Dönerbude Furtwangen</h1>
     </div>
     <div class="startup">
-    <div class="startupone">
       <h4>Wähle deine Grundeinstellungen</h4>
-    </div>
-    <form>
-      <select id= "employeeSelect">
-        <option value="workers" >Mitarbeiter</option>
-        <option value="1" >1 Mitarbeiter</option>
-        <option value="2" >2 Mitarbeiter</option>
-      </select>
-      <select id= "customerSelect">
-        <option value="customer" >Kunden pro Minute</option>
-        <option value="2" >2 Kunden</option>
-        <option value="4" >4 Kunden</option>
-      </select>
-      <select id= "capacitySelect">
-        <option value="capacity" >Behältnis Kapazität</option>
-        <option value="3" >3 Zutaten</option>
-        <option value="6" >6 Zutaten</option>
-      </select>
-      <select id= "warehouseSelect">
-        <option value="warehouse" >Lager Kapazität</option>
-        <option value="50" >50 Zutaten pro Sorte</option>
-        <option value="100" >100 Zutaten pro Sorte</option>
-      </select>
-      <select id= "breakSelect">
-        <option value="break" >Mitarbeiter Pause</option>
-        <option value="10" >10 Sekunden</option>
-        <option value="20" >20 Sekunden</option>
-      </select>
-      <button id="startbutton">Start</button>
-    </form>
+      <form>
+        <select id= "employeeSelect">
+          <option value="workers" >Mitarbeiter</option>
+          <option value="1" >1 Mitarbeiter</option>
+          <option value="2" >2 Mitarbeiter</option>
+        </select>
+        <select id= "customerSelect">
+          <option value="customer" >Kunden pro Minute</option>
+          <option value="2" >2 Kunden</option>
+          <option value="4" >4 Kunden</option>
+        </select>
+        <select id= "capacitySelect">
+          <option value="capacity" >Behältnis Kapazität</option>
+          <option value="3" >3 Zutaten</option>
+          <option value="6" >6 Zutaten</option>
+        </select>
+        <select id= "warehouseSelect">
+          <option value="warehouse" >Lager Kapazität</option>
+          <option value="50" >50 Zutaten pro Sorte</option>
+          <option value="100" >100 Zutaten pro Sorte</option>
+        </select>
+        <select id= "breakSelect">
+          <option value="break" >Mitarbeiter Pause</option>
+          <option value="10" >10 Sekunden</option>
+          <option value="20" >20 Sekunden</option>
+        </select>
+        <button id="startbutton">Start</button>
+      </form>
     </div>
     <div id="game">
       <div id="gamefield-container">

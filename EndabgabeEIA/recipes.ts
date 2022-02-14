@@ -1,6 +1,8 @@
 namespace Doenerbude {
 
+    /// Diese Klasse definiert eine Bestellung
     export class Order {
+
         product: PRODUCT;
         groceries: Array<GROCERY>
     
@@ -12,8 +14,11 @@ namespace Doenerbude {
         public toString(): string {
             let groceryStr: string = ""
 
+            // Durch alle Lebensmittel der Order iterieren
             this.groceries.forEach(g => {
+                // Leerzeichen zum String hinzufügen
                 groceryStr += " "
+                // Lebensmittel zum String hinzufügen
                 groceryStr += GROCERY[g]
             })
             return "Ich will ein " + PRODUCT[this.product] + " mit" + groceryStr;
@@ -21,7 +26,7 @@ namespace Doenerbude {
     }
 
     export class Orders {
-
+        /// Verfügbaren bestellungen
         private static availableOrders: Array<Order> = [
             new Order( PRODUCT.KEBAB, [ GROCERY.KEBAB_BREAD, GROCERY.ONION, GROCERY.TOMATO ]),
             new Order( PRODUCT.YUFKA, [ GROCERY.YUFKA_BREAD, GROCERY.PEPPER, GROCERY.ONION ]),
@@ -35,11 +40,14 @@ namespace Doenerbude {
             new Order( PRODUCT.LAHMACUN, [ GROCERY.LAHMACUN_BREAD, GROCERY.TOMATO ])
         ];
 
+        /// Gibt eine zufällige Bestellung zurück
         public static getRandomOrder(): Order {
-            return Orders.availableOrders[Orders.getRandomInt(Orders.availableOrders.length)];
+            let randomNumber: number = Orders.getRandomNumber(Orders.availableOrders.length)
+            return Orders.availableOrders[randomNumber];
         }  
 
-        private static getRandomInt(max: number):number {
+        /// Gibt zufällige Nummer zwischen 0 und max zurück
+        private static getRandomNumber(max: number):number {
             return Math.floor(Math.random() * max);
         }  
     }

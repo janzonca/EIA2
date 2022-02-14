@@ -4,29 +4,17 @@
 }
 
 .startup {
-font-family: 'Monteserrat', sans-serif;
-background-color: gainsboro;
-width: 30%;
-height: 30%;
-display: flex;
-justify-content: space-around;
-align-items: baseline;
-flex-direction: column;
+    font-family: 'Monteserrat', sans-serif;
+    background-color: gainsboro;
+    width: 30%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-direction: column;
 }
  
 
-
-#game{
-
-}
-
-#gamefield {
-
-}
-
-#controls{
-
-}
 #canvas{
     border: 2px solid black;
 

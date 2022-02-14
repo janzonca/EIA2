@@ -11,14 +11,15 @@ namespace Doenerbude {
             if (this.isMoving) {
                 return;
             }
-            
+
             this.isMoving = true;
 
             let moveInterval: number = setInterval(() => {
                 
                 let richtungsVektor: Position = new Position(newPosition.x - this.position.x, newPosition.y - this.position.y);
                 let distance: number = richtungsVektor.getLength();
-                // Faktor mit dem man die Position multiplizieren (scale) muss, damit der RichtungsVektor nur noch eine Länge von 10 besitzt.
+                // Faktor mit dem man die Position multiplizieren (scale) muss, damit der RichtungsVektor nur noch eine Länge von SPEED besitzten. 
+                // (SPEED ist in der main.ts definiert und gibt die Anzahl der Pixel pro Interval)
                 let factor: number = SPEED / richtungsVektor.getLength();
                 // Richtungsvektor auf Länge von SPEED bringen
                 richtungsVektor.scale(factor);

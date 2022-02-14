@@ -14,7 +14,8 @@ var Doenerbude;
             let moveInterval = setInterval(() => {
                 let richtungsVektor = new Doenerbude.Position(newPosition.x - this.position.x, newPosition.y - this.position.y);
                 let distance = richtungsVektor.getLength();
-                // Faktor mit dem man die Position multiplizieren (scale) muss, damit der RichtungsVektor nur noch eine Länge von 10 besitzt.
+                // Faktor mit dem man die Position multiplizieren (scale) muss, damit der RichtungsVektor nur noch eine Länge von SPEED besitzten. 
+                // (SPEED ist in der main.ts definiert und gibt die Anzahl der Pixel pro Interval)
                 let factor = Doenerbude.SPEED / richtungsVektor.getLength();
                 // Richtungsvektor auf Länge von SPEED bringen
                 richtungsVektor.scale(factor);

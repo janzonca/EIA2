@@ -3,16 +3,20 @@ namespace Doenerbude { // namespace
     export abstract class Grocery implements IDrawable {
         position: Position;
         color: string;
+        groceryType: GROCERY;
 
-        constructor (_position: Position, _color: string) {
+        constructor (_position: Position, _color: string, _groceryType: GROCERY) {
             this.position = _position;
             this.color = _color;
+            this.groceryType = _groceryType;
         }
 
-        draw(ctx: CanvasRenderingContext2D): void {
+        /// Zeichnen der Zutat als Dreieck
+        public draw(ctx: CanvasRenderingContext2D): void {
             ctx.beginPath();
             ctx.strokeStyle = this.color;
             ctx.fillStyle = this.color;
+            ctx.fillText(GROCERY[this.groceryType], this.position.x, this.position.y + 30)
             ctx.moveTo(this.position.x, this.position.y);
             ctx.lineTo(this.position.x + 20, this.position.y + 20);
             ctx.lineTo(this.position.x + 40, this.position.y);
@@ -20,16 +24,25 @@ namespace Doenerbude { // namespace
             ctx.closePath();
             ctx.stroke();
             ctx.fill ();
-        }  
+        }
+
+        // Zutaten sollen geklont werden können, damit sie in die Bestellung reinkommen
+        abstract clone(): void;
+        
     }
-//    ctx.arc(this.position.x, this.position.y, 15, 0, Math.PI * 2);
+
 
 
     // eine Klasse, welche eine Zwiebel darstellt 
     export class Onion extends Grocery {
 
         constructor(_position: Position) {
-            super(_position, "purple");
+            super(_position, "purple", GROCERY.ONION);
+        }
+
+        //Eine Zutat mit denselben Eigenschaften erstellen
+        clone(): Grocery {
+            return new Onion(this.position);
         }
 
     }
@@ -38,7 +51,11 @@ namespace Doenerbude { // namespace
     export class Pepper extends Grocery {
        
         constructor(_position: Position) {
-            super(_position, "yellow");
+            super(_position, "yellow", GROCERY.PEPPER);
+        }
+
+        clone(): Grocery {
+            return new Pepper(this.position);
         }
 
     }
@@ -47,7 +64,11 @@ namespace Doenerbude { // namespace
     export class Tomato extends Grocery {
        
         constructor(_position: Position) {
-            super(_position, "darkred");
+            super(_position, "darkred", GROCERY.TOMATO);
+        }
+
+        clone(): Grocery {
+            return new Tomato(this.position);
         }
 
 
@@ -56,16 +77,21 @@ namespace Doenerbude { // namespace
     export class Kebab extends Grocery {
       
         constructor(_position: Position) {
-            super(_position, "black");
+            super(_position, "black", GROCERY.KEBAB_BREAD);
         }
-
+        clone(): Grocery {
+            return new Kebab(this.position);
+        }
     }
     
 //eine Klasse, welche ein Yufka darstellt
     export class Yufka extends Grocery {
      
         constructor(_position: Position) {
-            super(_position, "orange");
+            super(_position, "orange", GROCERY.YUFKA_BREAD);
+        }
+        clone(): Grocery {
+            return new Yufka(this.position);
         }
 
     }
@@ -73,8 +99,10 @@ namespace Doenerbude { // namespace
     export class Lahmacun extends Grocery {
         
         constructor(_position: Position) {
-            super(_position, "brown");
+            super(_position, "brown", GROCERY.LAHMACUN_BREAD);
         }
-
+        clone(): Grocery {
+            return new Lahmacun(this.position);
+        }
     }
 }

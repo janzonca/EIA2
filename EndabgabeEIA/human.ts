@@ -16,11 +16,9 @@ namespace Doenerbude {
                 case MOOD.HAPPY:
                     color = "green";
                 
-                    //draw happy
                 break;
                 case MOOD.ANGRY:
                     color = "red";
-                    //TODO draw angry 
                 break;
             }
 
@@ -34,20 +32,37 @@ namespace Doenerbude {
 
     export class Customer extends Human {
 
-        private order: Order;
         public state: CUSTOMER_STATE;
+        private order: Order;
 
 
         constructor(_position: Position) {
             super(MOOD.HAPPY, _position);
 
+            // Eine zufällige Order wird ausgewählt und dem Kunden zugewiesen
             this.order = Orders.getRandomOrder();
+
+            // Wenn die Kundis nach 10 Sekunden noch nicht bedient wurden, werden sie wütend
+            setTimeout(() => {
+                    if (this.state !== CUSTOMER_STATE.FINISHED) {
+                        this.mood = MOOD.ANGRY
+                    }
+                }, 10000 );
         }
 
 
+        
+        getOrder(): Order {
+            return this.order;
+        }
 
+        //Überschreiben der Draw-Funktion
         draw(ctx: CanvasRenderingContext2D): void {
+
+            // Die originale Draw-Funktion aufrufen um den Kunden zu zeichnen
             super.draw(ctx);
+
+            //Die Order soll noch gezeichnet werden wenn der State ORDERED ist...
             if (this.state === CUSTOMER_STATE.ORDERED) {
                 ctx.fillText(this.order.toString(), this.position.x, this.position.y - this.radius - 3)
             }
@@ -80,11 +95,14 @@ namespace Doenerbude {
         }
 
         isClicked(clickX, clickY):boolean {
+            // Berechnung des Abstands vom Klick zum Mittelpunkt des Mitarbeiters
             let neuX = clickX - this.position.x;
             let neuY = clickY - this.position.y;
             let distance = Math.sqrt(Math.pow(neuX, 2) + Math.pow(neuY, 2));
+
+            // Wenn der Abstand > Radius ist, dann wurde nicht auf den Mitarbeiter geklickt
             let isClicked =  distance <= this.radius;
-            return isClicked    
+            return isClicked
         }
     }
 
